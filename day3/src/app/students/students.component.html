@@ -1,23 +1,23 @@
-<div>
-    <table>
-        <thead>
-            <tr>
-                <th>index</th>
-                <th>name</th>
-                <th>age</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- <tr>
+<div class="d-flex align-items-center justify-content-center mt-auto p-2 " >
+  <table class="table w-50">
+    <thead>
+      <tr>
+        <th scope="col">index</th>
+        <th scope="col">name</th>
+        <th scope="col">age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr>
                 <td>
                     {{data}}
                 </td>
             </tr> -->
-            <tr *ngFor="let s of students; index as i">
-                <td>{{i+1}}</td>
-                <td>{{s.name}}</td>
-                <td *ngIf="+s.age<40">{{s.age}}</td>
-            </tr>
-        </tbody>
-    </table>
+      <tr *ngFor="let s of students; index as i">
+        <td>{{i+1}}</td>
+        <td>{{s.name}}</td>
+        <td *ngIf="+s.age<40">{{s.age}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
