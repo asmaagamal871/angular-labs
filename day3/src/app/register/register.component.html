@@ -1,0 +1,43 @@
+<div class="d-flex flex-column">
+    <h2 class="text-center">Register</h2>
+    <div class=" d-flex align-items-center justify-content-center mt-auto p-2 ">
+        <div class="cont text-center w-50 border border-info">
+            <label class="mt-3">Name</label>
+            <input class="form-control mx-auto w-50 text-center m-2" type="text"
+                placeholder="Enter any Text"
+                [(ngModel)]="userName" aria-label="default input example"
+                [ngClass]="{'incorrect': userName && userName.length<=3 , 'correct':userName && userName.length>3}">
+                <div class=" justify-content-center mx-auto m-3 w-50"
+                    role="alert"
+                    *ngIf="userName && userName.length<=3; else validname">
+                    <p class="alert alert-danger">Name not valid</p>
+                </div>
+                <ng-template #validname>
+                    <div class=" justify-content-center mx-auto m-3 w-50"
+                        role="alert" *ngIf="userName">
+                        <p class="alert alert-success">Name is valid</p>
+                    </div>
+                </ng-template>
+            <label>Age</label>
+            <input class="form-control mx-auto w-50 text-center m-2" type="text"
+                placeholder="Enter any Text"
+                [(ngModel)]="userAge" aria-label="default input example"
+                [ngClass]="{'incorrect': userAge && +userAge<20 || +userAge> 40 , 'correct':userAge && +userAge<40 && +userAge>20}">
+                <div class=" justify-content-center mx-auto m-3 w-50"
+                    role="alert"
+                    *ngIf="userAge && +userAge<20 || +userAge> 40; else validAge">
+                    <p class="alert alert-danger">age not valid</p>
+                </div>
+                <ng-template #validAge>
+                    <div class=" justify-content-center mx-auto m-3 w-50"
+                        role="alert" *ngIf="+userAge">
+                        <p class="alert alert-success">age is valid</p>
+                    </div>
+                </ng-template>
+                <input type="button" class="bttn btn btn-info mb-3 text-white"
+                    value="Add"
+                    (click)="add()">
+            </div>
+        </div>
+    </div>
+    
