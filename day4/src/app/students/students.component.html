@@ -1,0 +1,25 @@
+<div class="d-flex flex-column mt-3">
+    <h2 class="text-center">students</h2>
+  <div class="d-flex align-items-center justify-content-center mt-auto p-2 " >
+    <table class="table w-50">
+      <thead>
+        <tr>
+          <th scope="col">Index</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Age</th>
+        </tr>
+      </thead>
+      <tbody>
+       
+        <tr *ngFor="let s of students; index as i">
+          <td>{{i+1}}</td>
+          <td>{{s.name}}</td>
+          <td>{{s.email}}</td>
+          <td>{{s.age}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  
